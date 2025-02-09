@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "test": "jest",
+    "get-pocket-access-token": "node getPocketAccessToken.js",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "jest": "^29.7.0"
+  }
+}
