@@ -1,8 +1,9 @@
 {
   "scripts": {
     "test": "jest",
-    "get-pocket-access-token": "node getPocketAccessToken.js",
-    "start": "node index.js"
+    "main": "npm run notificationUnreadPocketCount",
+    "generatePocketAccessToken": "node src/command/generatePocketAccessToken.js",
+    "notificationUnreadPocketCount": "node src/command/notificationUnreadPocketCount.js"
   },
   "dependencies": {
     "axios": "^1.7.9",

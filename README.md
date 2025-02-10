@@ -20,7 +20,7 @@ Pocketのアクセストークンを取得するには、以下の手順を実�
 
 1. `.envrc`ファイルに`POCKET_CONSUMER_KEY`を設定します。
 2. 以下のコマンドを実行して、認可コードを取得します。
-   1. `npm run get-pocket-access-token`
+   1. `npm run generatePocketAccessToken`
 3. スクリプトが表示するURLをブラウザで開き、Pocketの認可を行います。
 4. 認可が完了したら、スクリプトに戻りEnterキーを押します。
 5. アクセストークンが表示されるので、これを`.envrc`に設定します。

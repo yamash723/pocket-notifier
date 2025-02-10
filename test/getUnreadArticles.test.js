@@ -1,5 +1,5 @@
 const axios = require('axios');
-const getUnreadArticles = require('../getUnreadArticles');
+const getUnreadArticles = require('../src/lib/getUnreadArticles');
 
 jest.mock('axios');
 
