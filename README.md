@@ -6,7 +6,7 @@
 
 ## Hosting
 
-Heroku Schedulerで実行管理をしており、毎日17:00に通知が飛ぶようになっている
+GitHub Actionsで定期的に実行している。 `.github/workflows/notifier.yaml` を参照
 
 ## Language
 
