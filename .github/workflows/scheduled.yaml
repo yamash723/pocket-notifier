@@ -1,0 +1,19 @@
+on:
+  schedule:
+    # JST 17:00
+    - cron: '0 8 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 22.13.1 ref mise.toml
+      uses: actions/setup-node@v2
+      with:
+        node-version: 22.13.1
+    - name: Install dependencies
+      run: npm install
+    - name: Run main script
+      run: npm run main
