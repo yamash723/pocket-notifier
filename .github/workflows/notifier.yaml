@@ -1,0 +1,31 @@
+on:
+  push:
+  pull_request:
+  schedule:
+    # JST 17:00
+    - cron: '0 8 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: Running Scripts
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 22.13.1 ref mise.toml
+      uses: actions/setup-node@v2
+      with:
+        node-version: 22.13.1
+    - name: Install dependencies
+      run: npm install
+    - name: Run tests
+      run: npm test
+    - name: Run main script
+      run: npm run main
+      env:
+        POCKET_CONSUMER_KEY: ${{ secrets.POCKET_CONSUMER_KEY }}
+        POCKET_ACCESS_TOKEN: ${{ secrets.POCKET_ACCESS_TOKEN }}
+        LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
+        LINE_USER_ID: ${{ secrets.LINE_USER_ID }}

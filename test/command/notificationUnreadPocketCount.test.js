@@ -38,8 +38,8 @@ describe('Main Functionality', () => {
 
         const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
 
-        // メイン関数の実行
-        await notificationUnreadPocketCount();
+        // 失敗時は例外が発生する
+        await expect(notificationUnreadPocketCount()).rejects.toThrow();
 
         // アサーション
         expect(getUnreadArticles).toHaveBeenCalledTimes(1);

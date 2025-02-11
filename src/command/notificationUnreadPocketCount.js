@@ -11,6 +11,7 @@ async function notificationUnreadPocketCount() {
       console.log('通知を送信しました。');
   } catch (error) {
       console.error('エラーが発生しました:', error);
+      throw new Error(error);
   }
 }
 
