@@ -35,7 +35,7 @@ async function getAccessToken(requestToken) {
     return response.data.access_token;
 }
 
-async function main() {
+async function generatePocketAccessToken() {
     try {
         const requestToken = await getRequestToken();
         console.log(`認可コードを取得しました: ${requestToken}`);
@@ -53,4 +53,8 @@ async function main() {
     }
 }
 
-main();
+if (require.main === module) {
+    generatePocketAccessToken();
+}
+
+module.exports = generatePocketAccessToken;

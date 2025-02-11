@@ -19,4 +19,3 @@ async function sendLineNotification(message) {
 }
 
 module.exports = sendLineNotification;
-

@@ -1,7 +1,7 @@
 const getUnreadArticles = require('../lib/getUnreadArticles');
 const sendLineNotification = require('../lib/sendLineNotification');
 
-async function main() {
+async function notificationUnreadPocketCount() {
   try {
       const articles = await getUnreadArticles();
       const unreadCount = Object.keys(articles).length;
@@ -14,4 +14,8 @@ async function main() {
   }
 }
 
-main();
+if (require.main === module) {
+  notificationUnreadPocketCount();
+}
+
+module.exports = notificationUnreadPocketCount;

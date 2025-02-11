@@ -12,19 +12,23 @@ Heroku Schedulerで実行管理をしており、毎日17:00に通知が飛ぶ�
 
 - Node.js
 
-## Env
+### Usage
 
-### アクセストークンの取得
+```bash
+cp .envrc.sample .envrc
 
-Pocketのアクセストークンを取得するには、以下の手順を実行してください。
+# POCKET_ACCESS_TOKEN 以外を埋める
+vi .envrc
 
-1. `.envrc`ファイルに`POCKET_CONSUMER_KEY`を設定します。
-2. 以下のコマンドを実行して、認可コードを取得します。
-   1. `npm run generatePocketAccessToken`
-3. スクリプトが表示するURLをブラウザで開き、Pocketの認可を行います。
-4. 認可が完了したら、スクリプトに戻りEnterキーを押します。
-5. アクセストークンが表示されるので、これを`.envrc`に設定します。
+# Pocket の AccessToken を取得
+npm run generatePocketAccessToken
 
-### アプリケーションの実行
+# POCKET_ACCESS_TOKEN を入力
+vi .envrc
 
-Pocketの未読記事をLINEで通知するには、以下のコマンドを実行してください。
+direnv allow
+
+# Pocketの未読記事をLINEで通知
+npm run main
+```
+
